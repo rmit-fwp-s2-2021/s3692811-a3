@@ -1,9 +1,10 @@
 import React from "react";
 import { Card, Image } from "react-bootstrap";
+import { StyledPortfolio as SP } from "./PortfolioCard.Style";
 
 const PortfolioCard = ({ data }) => {
   return (
-    <Card style={{ width: "15rem" }}>
+    <SP.Card>
       <center>
         <Image
           roundedCircle
@@ -15,7 +16,7 @@ const PortfolioCard = ({ data }) => {
 
       <Card.Body>
         <Card.Title>{data.name}</Card.Title>
-        <Card.Text>
+        <Card.Text style={{ fontSize: "small" }}>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit eveniet
           minus voluptates accusantium nisi rerum maxime repellat alias officia
           fuga quos facilis deserunt doloremque totam eaque, numquam, vel, quo
@@ -23,7 +24,7 @@ const PortfolioCard = ({ data }) => {
         </Card.Text>
       </Card.Body>
       <Card.Footer>{data.role}</Card.Footer>
-    </Card>
+    </SP.Card>
   );
 };
 
