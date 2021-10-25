@@ -4,7 +4,7 @@ import { StyledPortfolio as SP } from "./PortfolioCard.Style";
 
 const PortfolioCard = ({ data }) => {
   return (
-    <SP.Card>
+    <SP.Card title="card" key={data._id}>
       <center>
         <Image
           roundedCircle

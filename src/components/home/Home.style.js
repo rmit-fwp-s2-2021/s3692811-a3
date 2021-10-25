@@ -23,14 +23,20 @@ StyledHome.SearchBar = styled.input`
   outline: none;
 `;
 
-StyledHome.Button = styled(Button)`
+StyledHome.Button = styled.button`
   border-radius: 10px;
   border: none;
+  color: white;
   background-size: 200%;
-
+  outline: none;
   background-image: linear-gradient(to left, #f4d03f, #d68910, #e74c3c);
-  transition: background-position 1.5s;
+  transition: background-position 0.5s;
+  width: 8rem;
   &:hover {
     background-position: right;
+  }
+  &:focus {
+    outline: none;
+    outline-offset: none;
   }
 `;
