@@ -4,10 +4,7 @@ export const StyledHome = {};
 
 StyledHome.HomeContainer = styled.div``;
 
-StyledHome.PortfolioContainer = styled.div`
-  display: flex;
-  justify-content: space-evenly;
-`;
+StyledHome.PortfolioContainer = styled.div``;
 
 StyledHome.SearchContainer = styled.div`
   display: flex;

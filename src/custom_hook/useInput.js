@@ -8,12 +8,6 @@ const useInput = (value, profiles) => {
     setInput(value);
   };
 
-  /*
-    This useEffect serves as a helper function for useInput hook.
-    It helps to clear the input of the search bar after successful searches.
-    To test it, just unComment the useEffect below and remove the useEffect 
-    inside Home components
-  */
   // useEffect(() => {
   //   handleChangeInput("");
   // }, [profiles]);

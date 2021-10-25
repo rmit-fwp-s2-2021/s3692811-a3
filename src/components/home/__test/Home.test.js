@@ -44,7 +44,7 @@ describe("handleChangeInput_of_userInputHook", () => {
 describe("CheckSearchButton", () => {
   it("onClick", () => {
     const { queryByTitle, queryAllByTitle } = render(<Home />);
-    const btn = queryByTitle("searchButton");
+    const btn = queryByTitle("search");
 
     const searchBar = queryByTitle("input");
     fireEvent.change(searchBar, { target: { value: "Nikolai" } });

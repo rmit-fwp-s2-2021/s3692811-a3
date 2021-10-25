@@ -1,9 +1,9 @@
 import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
-import { Row, Button } from "react-bootstrap";
+import { Form, Row } from "react-bootstrap";
 import useInput from "../../custom_hook/useInput";
-import portfolios from "../porfolio/data";
+import portfolios from "../../data";
 import PortfolioCard from "../porfolio/PortfolioCard";
 import { BeatLoader } from "react-spinners";
 import { BsSearch } from "react-icons/bs";
@@ -22,6 +22,9 @@ const Home = () => {
     }
   }, []);
 
+  /*
+    Search function for "Search bar"
+  */
   const search = (input) => {
     setLoading(true);
 
@@ -37,43 +40,49 @@ const Home = () => {
     }, 500);
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    search(input);
+  };
+
   return (
     <SH.HomeContainer className="container">
       <center>
         <h1>Welcome to Portfolio Search</h1>
       </center>
 
+      {/* Search Bar */}
       <SH.SearchContainer>
-        <SH.SearchBar
-          title="input"
-          type="text"
-          placeholder="Search name ..."
-          value={input}
-          onChange={(e) => {
-            handleChangeInput(e.target.value);
-          }}
-        />
-        <SH.Button
-          title="searchButton"
-          variant="success"
-          onClick={() => {
-            search(input);
-          }}
-        >
-          {loading ? (
-            <BeatLoader color="white" loading={loading} size={10} />
-          ) : (
-            <>
-              Search
-              <BsSearch style={{ marginLeft: "5px" }} />
-            </>
-          )}
-        </SH.Button>
+        <Form onSubmit={handleSubmit}>
+          <SH.SearchBar
+            title="input"
+            type="text"
+            placeholder="Search name ..."
+            value={input}
+            onChange={(e) => {
+              handleChangeInput(e.target.value);
+            }}
+          />
+          <SH.Button type="submit" title="search" variant="success">
+            {loading ? (
+              <BeatLoader color="white" loading={loading} size={10} />
+            ) : (
+              <>
+                Search
+                <BsSearch style={{ marginLeft: "5px" }} />
+              </>
+            )}
+          </SH.Button>
+        </Form>
       </SH.SearchContainer>
+
+      {/* Display Portfolios */}
       <SH.PortfolioContainer>
-        {profiles.map((user) => (
-          <PortfolioCard data={user} />
-        ))}
+        <Row>
+          {profiles.map((user, index) => (
+            <PortfolioCard key={index} data={user} />
+          ))}
+        </Row>
       </SH.PortfolioContainer>
       {profiles.length == 0 ? (
         //   The height in this div help the app's background to maitain a filled color

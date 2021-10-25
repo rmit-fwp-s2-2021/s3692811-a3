@@ -1,74 +1,53 @@
-# Notice:
+a
 
-If you want to test the task D, just come to "useInput.js" file, uncomment the useEffect in this file. Then, comment the useEffect hook in "Home.js".
+### COSC2758 Further Web Programming - Final Assignment
 
-## Available Scripts
+Student id: s3698211
 
-In the project directory, you can run:
+Student name: To Hoang Khoi
 
-### npm install
+### To run the application:
 
-Install all the dependencies.
+1. Open the root folder.
+2. Run "npm install" to install on the dependencies.
+3. Run "npm start" to launch the application. The application will run at "http://localhost:3000/"
 
-### `npm start`
+---
 
-Runs the app in the development mode.
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Task A:
 
-The page will reload if you make edits.
-You will also see any lint errors in the console.
+Github repository link: https://github.com/rmit-fwp-s2-2021/s3692811-a3
 
-### `npm test`
+### Task B:
 
-Launches the test runner in the interactive watch mode.
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The code for the portfolio cards mapping can be found in "Home.js". The code for each individual portfolio card can be found inside "PortFolioCard.js".
 
-### `npm run build`
+The data is hardcoded and stored in "data.js".
 
-Builds the app for production to the `build` folder.
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The image is downloaded from free source website called "https://unsplash.com/s/photos/avatar" and store in "public/images" folder.
 
-The build is minified and the filenames include the hashes.
-Your app is ready to be deployed!
+### Task C:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Implemented within the "search" function in "Home.js".
 
-### `npm run eject`
+### Task D:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+The useEffect in custom hook are used to clear the input of the search bar after the search action is made.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+To test this Task, go to the "custom_hook/useInput.js" and uncomment the code from line 11 - 13. Then go to "Home.js" and comment the code from line 18 - 23.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Task E:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+(\*\*\*Make sure the changes in task D are reverted before testing the feature in this Task.)
 
-## Learn More
+Implemented in "Home.js".
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+A useEffect hook is used to automatically search when there is a correct key pair value in localStorage (i.e: "input" : "Nikolai").
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Task F:
 
-### Code Splitting
+Tests are written inside "Home.test.js".
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Test 1: Test the custom hook used for the search functions to control the input value inside the search bar.
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Test 2: Test if the data is stored inside the localStorage correctly.
