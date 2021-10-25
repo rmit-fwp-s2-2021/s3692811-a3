@@ -5,7 +5,7 @@ export const StyledPortfolio = {};
 
 StyledPortfolio.Card = styled(Card)`
   width: 15rem;
-  height: 70vh;
+  height: 80vh;
   padding-top: 5rem;
   text-align: center;
   transition: 0.5s;
