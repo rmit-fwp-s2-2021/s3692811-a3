@@ -9,18 +9,26 @@ import PortfolioCard from "../porfolio/PortfolioCard";
 import { StyledHome as SH } from "./Home.style";
 
 const Home = () => {
-  const [state, setState] = useState(Array.from(portfolios));
+  const [profiles, setProfiles] = useState([]);
   const { input, handleChangeInput } = useInput("");
 
   const handleChange = (e) => {
     handleChangeInput(e.target.value);
   };
   useEffect(() => {
-    console.log(state);
-  }, [...state]);
+    setProfiles(Array.from(portfolios));
+  }, []);
+
+  /*
+  The useEffect serve as a helper function for useInput hook.
+  It helps to clear the input of the search bar after successful searches.
+  */
+  useEffect(() => {
+    handleChangeInput("");
+  }, [profiles]);
 
   const search = () => {
-    setState(
+    setProfiles(
       portfolios.filter((item) =>
         item.name.toLowerCase().includes(input.toLowerCase())
       )
@@ -45,7 +53,7 @@ const Home = () => {
         </SH.Button>
       </SH.SearchContainer>
       <SH.PortfolioContainer>
-        {state.map((user) => (
+        {profiles.map((user) => (
           <PortfolioCard data={user} />
         ))}
       </SH.PortfolioContainer>

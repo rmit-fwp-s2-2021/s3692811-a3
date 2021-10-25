@@ -6,6 +6,7 @@ const useInput = (value) => {
 
   const handleChangeInput = (value) => {
     setInput(value);
+    console.log(input);
   };
   return { input, handleChangeInput };
 };
