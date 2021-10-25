@@ -6,7 +6,7 @@ StyledHome.HomeContainer = styled.div``;
 
 StyledHome.PortfolioContainer = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
 `;
 
 StyledHome.SearchContainer = styled.div`

@@ -15,24 +15,32 @@ const Home = () => {
   const handleChange = (e) => {
     handleChangeInput(e.target.value);
   };
+
   useEffect(() => {
     setProfiles(Array.from(portfolios));
+    if (localStorage.getItem("input")) {
+      handleChangeInput(localStorage.getItem("input"));
+      search(localStorage.getItem("input"));
+    }
   }, []);
 
   /*
-  The useEffect serve as a helper function for useInput hook.
-  It helps to clear the input of the search bar after successful searches.
+    This useEffect serves as a helper function for useInput hook.
+    It helps to clear the input of the search bar after successful searches.
+    To test it, just unComment the useEffect below and remove the code from line 21 to 24.
   */
-  useEffect(() => {
-    handleChangeInput("");
-  }, [profiles]);
+  //   useEffect(() => {
+  //     handleChangeInput("");
+  //   }, [profiles]);
 
-  const search = () => {
+  const search = (input) => {
     setProfiles(
       portfolios.filter((item) =>
         item.name.toLowerCase().includes(input.toLowerCase())
       )
     );
+    //Store the input to the localStorage
+    localStorage.setItem("input", input);
   };
 
   return (
@@ -48,7 +56,12 @@ const Home = () => {
           value={input}
           onChange={handleChange}
         />
-        <SH.Button variant="success" onClick={search}>
+        <SH.Button
+          variant="success"
+          onClick={() => {
+            search(input);
+          }}
+        >
           Search
         </SH.Button>
       </SH.SearchContainer>
